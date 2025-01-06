@@ -72,7 +72,7 @@ const totalContributions = GAMES_JSON.reduce((total, game) => {
 
 
 // set the inner HTML using a template literal and toLocaleString to get a number with commas
-contributionsCard.innerHTML = `${totalContributions.toLocaleString()} Contributions`;
+contributionsCard.innerHTML = `${totalContributions.toLocaleString()}`;
 
 
 // grab the amount raised card, then use reduce() to find the total amount raised
@@ -83,13 +83,13 @@ const totalRaised = GAMES_JSON.reduce((total, game) => {
 }, 0);
 
 // set inner HTML using template literal
-raisedCard.innerHTML = `Total Raised: $${totalRaised.toLocaleString()}`;
+raisedCard.innerHTML = `$${totalRaised.toLocaleString()}`;
 
 
 // grab number of games card and set its inner HTML
 const gamesCard = document.getElementById("num-games");
 
-gamesCard.innerHTML = `${GAMES_JSON.length} Games Available`;
+gamesCard.innerHTML = `${GAMES_JSON.length}`;
 /*************************************************************************************
  * Challenge 5: Add functions to filter the funded and unfunded games
  * total number of contributions, amount donated, and number of games on the site.
@@ -152,7 +152,7 @@ const descriptionContainer = document.getElementById("description-container");
 const unfunded = GAMES_JSON.filter(game => game.pledged < game.goal);
 
 // create a string that explains the number of unfunded games using the ternary operator
-const message = `A total of $${totalRaised.toLocaleString()} has been raised for ${GAMES_JSON.length} games. There ${unfunded.length === 1 ? 'is' : 'are'} ${unfunded.length} game${unfunded.length !== 1 ? 's' : ''} remaining unfunded.`;
+const message = `A total of $${totalRaised.toLocaleString()} has been raised for ${GAMES_JSON.length} games. There ${unfunded.length === 1 ? 'is' : 'are'} ${unfunded.length} game${unfunded.length !== 1 ? 's' : ''} remaining unfunded. We need your help to fund these amazing games.`;
 
 // create a new DOM element containing the template string and append it to the description container
 const paragraph = document.createElement("p");
